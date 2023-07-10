@@ -1,0 +1,164 @@
+* {
+	font-family: 'Oxygen', sans-serif;
+	box-sizing: border-box;
+	margin: 0px;
+	padding: 0px;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	background-image: -moz-linear-gradient(180deg, rgba(54,59,64,1) 0%, rgba(25,26,29,1) 100%);
+	background-image: -webkit-linear-gradient(180deg, rgba(54,59,64,1) 0%, rgba(25,26,29,1) 100%);
+	background-image: linear-gradient(180deg, rgba(54,59,64,1) 0%, rgba(25,26,29,1) 100%);
+	padding: 20px;
+}
+
+#date-picker {
+	margin-top: 20px;
+}
+
+.date-picker-wrapper {
+	width: 420px;
+	background-color: #34393E;
+	border-radius: 20px;
+	border-top: 2px solid #41474F;
+	border-left: 2px solid #41474F;
+	border-right: 2px solid #41474F;
+
+	margin: auto;
+}
+
+.date-picker-pagination {
+	
+}
+
+.date-picker-pagination-wrapper {
+	padding: 20px;
+	display: flex;
+	border-bottom: 1px solid #383E44;
+	box-shadow: 0px 2px 0px #272B2F;
+}
+
+.date-picker-pagination-left,
+.date-picker-pagination-right {
+	width: 45px;
+	height: 45px;
+	border-radius: 50%;
+	box-shadow: -4px -4px 6px #3f454a, 4px 4px 6px #242B2D;
+	background: -moz-linear-gradient(145deg, rgba(37, 38, 43, 1) 0%, rgba(51, 56, 62, 1) 100%);
+	background: -webkit-linear-gradient(145deg, rgba(37, 38, 43, 1) 0%, rgba(51, 56, 62, 1) 100%);
+	background: linear-gradient(145deg, rgba(37, 38, 43, 1) 0%, rgba(51, 56, 62, 1) 100%);
+	padding: 2px;
+	cursor: pointer;
+}
+.date-picker-pagination-arrow {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	background: -moz-linear-gradient(145deg, rgba(51, 56, 62, 1) 0%, rgba(37, 38, 43, 1) 100%);
+	background: -webkit-linear-gradient(145deg, rgba(51, 56, 62, 1) 0%, rgba(37, 38, 43, 1) 100%);
+	background: linear-gradient(145deg, rgba(51, 56, 62, 1) 0%, rgba(37, 38, 43, 1) 100%);
+}
+
+.date-picker-pagination-label {
+	flex-grow: 1;
+	color: #D2D2D3;
+	font-size: 18px;
+	align-self: center;
+	text-align: center;
+	padding: 0px 10px;
+	font-weight: 600;
+}
+
+/* --- Date picker calender --- */
+.date-picker-calender-wrapper {
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+	padding: 25px 10px 20px;
+}
+
+.date-picker-calender-week-labels {
+	display: table-header-group;
+}
+
+.date-picker-calender-week {
+	display: table-row;
+	line-height: 52px;
+}
+
+.date-picker-calender-week-label {
+	display: table-cell;
+	text-align: center;
+	color: #D2D2D3;
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.date-picker-calender-week-numbers {
+	display: table-row-group;
+}
+
+.date-picker-calender-week-number-cell {
+	display: table-cell;
+}
+
+.date-picker-calender-week-number-wrapper {
+	text-align: center;
+	color: #4C5054;
+	font-size: 20px;
+	padding: 2px;
+}
+
+.date-picker-calender-week-number {
+	border-radius: 50%;
+	cursor: pointer;
+}
+.date-picker-calender-week-number:hover {
+	background-color: #44494d;
+}
+
+.date-picker-calender-week-number-cell.date-picker-calender-active .date-picker-calender-week-number {
+	color: #828588;
+}
+
+.date-picker-calender-week-number-cell.date-picker-calender-range-start .date-picker-calender-week-number-wrapper,
+.date-picker-calender-week-number-cell.date-picker-calender-range-end .date-picker-calender-week-number-wrapper{
+	border-radius: 50%;
+	background: -moz-linear-gradient(145deg, rgb(236, 73, 18) 0%, rgba(171,27,12,1) 100%);
+	background: -webkit-linear-gradient(145deg, rgba(236,73,18,1) 0%, rgba(171,27,12,1) 100%);
+	background: linear-gradient(145deg, rgba(236,73,18,1) 0%, rgba(171,27,12,1) 100%);
+	box-shadow: 0px 4px 20px rgba(236,73, 18, 43%);
+	position: relative;
+}
+
+.date-picker-calender-week-number-cell.date-picker-calender-range-start {
+	box-shadow: inset 0 26px 6px -20px rgb(41 45 49), inset 0 -26px 6px -20px rgb(61 66 70);
+	border-top-left-radius: 50%;
+	border-bottom-left-radius: 50%;
+}
+.date-picker-calender-week-number-cell.date-picker-calender-range-end {
+	box-shadow: inset 0 26px 6px -20px rgb(41 45 49), inset 0 -26px 6px -20px rgb(61 66 70);
+	border-top-right-radius: 50%;
+	border-bottom-right-radius: 50%;
+}
+
+.date-picker-calender-week-number-cell.date-picker-calender-in-range {
+	box-shadow: inset 0 26px 6px -20px rgb(41 45 49), inset 0 -26px 6px -20px rgb(61 66 70);
+}
+
+.date-picker-calender-week-number-cell.date-picker-calender-range-start .date-picker-calender-week-number,
+.date-picker-calender-week-number-cell.date-picker-calender-range-end .date-picker-calender-week-number {
+	border-radius: 50%;
+	color: #fff;
+	font-weight: 600;
+	box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.32);
+	background-color: #ec4912;
+}
